@@ -13,7 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
          localStorage.setItem('productList', JSON.stringify(products));
         for (let i = 0 ; i < products.length; i++){
           if (products[i]!=null){
-          itemList.appendChild(new ProductItem(products[i].id, products[i].image, products[i].title, products[i].price));
+          var prductObj = new ProductItem(products[i].id, products[i].image, products[i].title, products[i].price);
+          itemList.appendChild(prductObj);
         }
       }
   });
