@@ -1,6 +1,6 @@
 async function dataFetch(){
   let items = JSON.parse(localStorage.getItem('productList'));
-  if (items.length == 0) {
+  if (items == null) {
     const response = await fetch('https://fakestoreapi.com/products');
     items =  await response.json();
   }
