@@ -75,15 +75,15 @@ class ProductItem extends HTMLElement {
     proImg.setAttribute('src', image);
     proImg.setAttribute('alt', title);
     proImg.setAttribute('width', "200" );
-    const proP1 = document.createElement('p');
-    proP1.setAttribute('class', 'title');
-    proP1.innerText= title;
-    const proP2 = document.createElement('p');
-    proP2.setAttribute('class', 'price');
-    proP2.innerText= `$${price.toFixed(2)}`;;
+    const protitle = document.createElement('p');
+    protitle.setAttribute('class', 'title');
+    protitle.innerText= title;
+    const proPrice = document.createElement('p');
+    proPrice.setAttribute('class', 'price');
+    proPrice.innerText= `$${price.toFixed(2)}`;;
     listItems.append(proImg);
-    listItems.append(proP1);
-    listItems.append(proP2);
+    listItems.append(protitle);
+    listItems.append(proPrice);
     const proButton = document.createElement('button');
     proButton.innerText = 'Add to Cart';
     
