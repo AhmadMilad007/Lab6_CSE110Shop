@@ -1,4 +1,3 @@
-// Script.js
 async function dataFetch(){
   let items = JSON.parse(localStorage.getItem('productList'));
   if (items.length == 0) {
