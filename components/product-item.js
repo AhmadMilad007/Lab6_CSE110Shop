@@ -85,11 +85,31 @@ class ProductItem extends HTMLElement {
     listItems.append(proP1);
     listItems.append(proP2);
     const proButton = document.createElement('button');
-    proButton.innerText = 'Add to cart';
-    listItems.append(proButton);
+    proButton.innerText = 'Add to Cart';
+    
+    proButton.onclick = () => {
+     
+      console.log("what");
+      if (proButton.innerText == "Add to Cart"){
+            alert('Added to Cart!');
+            proButton.innerText = 'Remove From Cart';
+            let x = document.getElementById('cart-count');
+            let val = parseInt(x.innerText);
+            val = val +1;
+            x.innerText = val;
+      }
+      else {
+            alert('Removed From Cart');
+            proButton.innerText = 'Add to Cart';
+            let x = document.getElementById('cart-count');
+            let val = parseInt(x.innerText);
+            val = val -1;
+            x.innerText = val;
+      }
+    }
 
+    listItems.append(proButton);
     this.shadowRoot.append(listItems);
   }
 }
-
 customElements.define('product-item', ProductItem);
